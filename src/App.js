@@ -1,23 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import SHlogo from "./SH-logo.png";
+import { useState } from "react";
 
 function App() {
+  const [input, setInput] = useState("");
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+      <header className="">
+        {input !== "" ? (
+          <p className="display">{input}</p>
+        ) : (
+          <img src={SHlogo} className="app-logo" alt="logo" />
+        )}
       </header>
+      <main>
+        <input
+          type="text"
+          value={input}
+          onChange={(e) => setInput(e.target.value)}
+        />
+      </main>
+      <div className="buttons">
+        <button className="btn">Google Search</button>
+        <button className="btn">I'm Feeling Lukcy</button>
+      </div>
     </div>
   );
 }
