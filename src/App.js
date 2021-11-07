@@ -13,7 +13,11 @@ function App() {
           <img src={SHlogo} className="app-logo" alt="logo" />
         )}
       </header>
-      <SearchBar input={input} handleChange={(e) => setInput(e.target.value)} />
+      <SearchBar
+        placeholder="Whatever you enter gets displayed above..."
+        input={input}
+        handleChange={(e) => setInput(e.target.value)}
+      />
       <div className="buttons">
         <button className="btn">Google Search</button>
         <button className="btn">I'm Feeling Lukcy</button>
